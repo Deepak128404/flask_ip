@@ -1,10 +1,10 @@
 from flask import Flask, render_template
+import socket
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    import socket
     hostname = socket.gethostname()
     container_ip = socket.gethostbyname(hostname)
     return render_template('index.html', container_ip=container_ip)
