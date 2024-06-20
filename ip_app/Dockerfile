@@ -3,6 +3,8 @@ FROM python AS  builder
 WORKDIR /app
 
 ADD https://github.com/Deepak128404/flask_ip.git .
+#to copy requirements file locally
+COPY requirements.txt /tmp/requirements.txt
 
 RUN pip install -r ip_app/requirements.txt
 
