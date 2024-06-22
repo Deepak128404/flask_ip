@@ -7,7 +7,7 @@ WORKDIR /app
 COPY . .
 
 # Install dependencies
-RUN pip install -r ip_app/requirements.txt
+RUN pip install -r flask_ip/ip_app/requirements.txt
 
 # Second stage
 FROM python:3.9-slim
