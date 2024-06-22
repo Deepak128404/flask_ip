@@ -6,11 +6,8 @@ WORKDIR /app
 # Copy the entire repository content into the container
 COPY . .
 
-# List the contents to debug
-RUN ls -R
-
 # Install dependencies
-RUN pip install -r /app/ip_app/requirements.txt
+RUN pip install -r requirements.txt
 
 # Second stage
 FROM python:3.9-slim
@@ -22,9 +19,6 @@ WORKDIR /app
 COPY --from=builder /app /app
 COPY --from=builder /usr/local /usr/local
 
-# List the contents to debug
-RUN ls -R
-
 # Expose the port the app runs on
 EXPOSE 5000
 
@@ -32,4 +26,4 @@ EXPOSE 5000
 ENTRYPOINT ["python"]
 
 # Set the command
-CMD ["/app/ip_app/get_container_ip.py"]
+CMD ["get_container_ip.py"]
