@@ -44,7 +44,7 @@ ArgoCD is used for continuous delivery to our Kubernetes cluster. It watches thi
 The `(https://github.com/Deepak128404/argo-cd-menifest-python/tree/main/python-flask-cd)` repo contains:
 
 1. `deployment.yaml`: Defines the Kubernetes Deployment for the Flask app
-2. `service.yaml`: Defines the Kubernetes Service to expose the app
+2. `svc.yaml`: Defines the Kubernetes Service to expose the app
 
 ## Setup and Usage
 
